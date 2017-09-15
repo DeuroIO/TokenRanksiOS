@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5904B53BEC84F0280B29CA /* Pods_TokenRanks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981E537BAABF02AEED3F1C5B /* Pods_TokenRanks.framework */; };
 		C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B21F6B592D008D5D35 /* AppDelegate.swift */; };
 		C098D6B51F6B592D008D5D35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B41F6B592D008D5D35 /* ViewController.swift */; };
 		C098D6B81F6B592D008D5D35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B61F6B592D008D5D35 /* Main.storyboard */; };
 		C098D6BA1F6B592D008D5D35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B91F6B592D008D5D35 /* Assets.xcassets */; };
 		C098D6BD1F6B592D008D5D35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6BB1F6B592D008D5D35 /* LaunchScreen.storyboard */; };
+		C098D6C51F6B5D28008D5D35 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		714CDBECAB2DC5FD1116048C /* Pods-TokenRanks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokenRanks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TokenRanks/Pods-TokenRanks.debug.xcconfig"; sourceTree = "<group>"; };
+		981E537BAABF02AEED3F1C5B /* Pods_TokenRanks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokenRanks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FBB1FE26EB27C37ACC28C7F /* Pods-TokenRanks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokenRanks.release.xcconfig"; path = "Pods/Target Support Files/Pods-TokenRanks/Pods-TokenRanks.release.xcconfig"; sourceTree = "<group>"; };
 		C098D6AF1F6B592D008D5D35 /* TokenRanks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRanks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098D6B21F6B592D008D5D35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C098D6B41F6B592D008D5D35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		C098D6B91F6B592D008D5D35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C098D6BC1F6B592D008D5D35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C098D6BE1F6B592D008D5D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5904B53BEC84F0280B29CA /* Pods_TokenRanks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BFBFAE420817F02C0B162B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				714CDBECAB2DC5FD1116048C /* Pods-TokenRanks.debug.xcconfig */,
+				9FBB1FE26EB27C37ACC28C7F /* Pods-TokenRanks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C098D6A61F6B592D008D5D35 = {
 			isa = PBXGroup;
 			children = (
 				C098D6B11F6B592D008D5D35 /* TokenRanks */,
 				C098D6B01F6B592D008D5D35 /* Products */,
+				2BFBFAE420817F02C0B162B0 /* Pods */,
+				D3DFF2305149C75EEB9DBC44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +74,21 @@
 			children = (
 				C098D6B21F6B592D008D5D35 /* AppDelegate.swift */,
 				C098D6B41F6B592D008D5D35 /* ViewController.swift */,
+				C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */,
 				C098D6B61F6B592D008D5D35 /* Main.storyboard */,
 				C098D6B91F6B592D008D5D35 /* Assets.xcassets */,
 				C098D6BB1F6B592D008D5D35 /* LaunchScreen.storyboard */,
 				C098D6BE1F6B592D008D5D35 /* Info.plist */,
 			);
 			path = TokenRanks;
+			sourceTree = "<group>";
+		};
+		D3DFF2305149C75EEB9DBC44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				981E537BAABF02AEED3F1C5B /* Pods_TokenRanks.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C098D6C11F6B592D008D5D35 /* Build configuration list for PBXNativeTarget "TokenRanks" */;
 			buildPhases = (
+				F822318E3D5946C5F09AD89C /* [CP] Check Pods Manifest.lock */,
 				C098D6AB1F6B592D008D5D35 /* Sources */,
 				C098D6AC1F6B592D008D5D35 /* Frameworks */,
 				C098D6AD1F6B592D008D5D35 /* Resources */,
+				5F500D596C57512A22F003D8 /* [CP] Embed Pods Frameworks */,
+				B8722F93D6DAC2446B633E0E /* [CP] Copy Pods Resources */,
+				C02EA2731F6C2B8200FF7D21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -96,7 +127,7 @@
 				TargetAttributes = {
 					C098D6AE1F6B592D008D5D35 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VVS39BSA38;
+						DevelopmentTeam = 6AWUP5FE76;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,12 +163,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F500D596C57512A22F003D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TokenRanks/Pods-TokenRanks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8722F93D6DAC2446B633E0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TokenRanks/Pods-TokenRanks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C02EA2731F6C2B8200FF7D21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9cbbab9300390959bd48b87d8497bc194a44486d e65aac01986581f34df9e32439201e2132b16996854f18748bf3b8810506ef98";
+		};
+		F822318E3D5946C5F09AD89C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TokenRanks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C098D6AB1F6B592D008D5D35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C098D6B51F6B592D008D5D35 /* ViewController.swift in Sources */,
+				C098D6C51F6B5D28008D5D35 /* TableViewDelegate.swift in Sources */,
 				C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,26 +355,34 @@
 		};
 		C098D6C21F6B592D008D5D35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 714CDBECAB2DC5FD1116048C /* Pods-TokenRanks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VVS39BSA38;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AWUP5FE76;
 				INFOPLIST_FILE = TokenRanks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = aisense.TokenRanks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelei.TokenRanks1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C098D6C31F6B592D008D5D35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FBB1FE26EB27C37ACC28C7F /* Pods-TokenRanks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VVS39BSA38;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AWUP5FE76;
 				INFOPLIST_FILE = TokenRanks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = aisense.TokenRanks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelei.TokenRanks1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +406,7 @@
 				C098D6C31F6B592D008D5D35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
