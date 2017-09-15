@@ -6,6 +6,9 @@ target 'TokenRanks' do
   use_frameworks!
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'IQKeyboardManager'
   # Pods for TokenRanks
 
 end
