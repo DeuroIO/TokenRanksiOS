@@ -29,4 +29,12 @@ extension TopTransactionViewController: UITableViewDelegate,UITableViewDataSourc
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TopTransactionTableViewCell
+        if let address = cell.addressLabel.text {
+            _ = UIApplication.shared.open(URL(string: "https://etherscan.io/address/\(address)")!, options: [:], completionHandler: nil)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

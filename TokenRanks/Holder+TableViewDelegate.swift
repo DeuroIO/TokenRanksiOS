@@ -28,4 +28,12 @@ extension TokenHolderViewController: UITableViewDelegate,UITableViewDataSource {
         cell.percantageLabel.text = (Double(holder.top_amount) / Constant.kyberTotalAmountOfTokenDenominator).rounded(toPlaces: 3).description + "%"
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TopAccountTableViewCell
+        if let address = cell.addressLabel.text {
+            _ = UIApplication.shared.open(URL(string: "https://etherscan.io/address/\(address)")!, options: [:], completionHandler: nil)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
