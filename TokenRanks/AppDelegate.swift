@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Fabric.with([Crashlytics.self])
+        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().isEnableAutoToolbar = false
+        IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+        
+        
+        APIFactory.sharedInstance.requestTopTokenHolder(timestamp: "20170915") { (holders) in
+            if let m_holders = holders {
+                print(m_holders)
+            }
+        }
+        
+        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: "20170915") { (transactions) in
+            if let m_transactions = transactions {
+                print(m_transactions)
+            }
+        }
         return true
     }
 

@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Fabric.with([Crashlytics.self])
+        
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
