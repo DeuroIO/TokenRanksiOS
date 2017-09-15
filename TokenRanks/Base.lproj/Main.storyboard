@@ -13,8 +13,7 @@
         <!--Token Holder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="TokenRanks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TokenHolderViewController" customModule="TokenRanks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="K8G-AT-mic">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="K8G-AT-mic" customClass="TopAccountTableViewCell" customModule="TokenRanks" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K8G-AT-mic" id="fmt-sO-24w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkm-HA-jnz">
@@ -43,7 +42,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xa5b824da7e01a929900781b1fd22f4c09cec75f5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqY-My-93g">
                                                     <rect key="frame" x="54" y="8" width="321" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="248,921" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq7-Yq-rwd">
@@ -52,14 +51,12 @@
                                                         <constraint firstAttribute="height" constant="26" id="GPi-he-eaQ"/>
                                                         <constraint firstAttribute="width" constant="81" id="fOS-18-Azb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.28%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-4o-GkC">
                                                     <rect key="frame" x="54" y="62" width="81" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="一个交易所地址" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-Bd-dHE">
@@ -89,6 +86,13 @@
                                                 <constraint firstItem="Pq7-Yq-rwd" firstAttribute="centerY" secondItem="fmt-sO-24w" secondAttribute="centerY" id="wd7-U4-FgA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="fqY-My-93g" id="Pyw-TE-yIK"/>
+                                            <outlet property="amountLabel" destination="Pq7-Yq-rwd" id="oeA-ky-46V"/>
+                                            <outlet property="memoTextView" destination="Wob-Bd-dHE" id="hua-9S-xkR"/>
+                                            <outlet property="percantageLabel" destination="Pyc-4o-GkC" id="Kmd-MY-sNc"/>
+                                            <outlet property="rankLabel" destination="Qkm-HA-jnz" id="XC6-E7-fPY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -106,15 +110,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Token Holder" id="XXd-iY-LMg"/>
+                    <connections>
+                        <outlet property="tableView" destination="32v-sk-FqK" id="OW6-LK-aR7"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1956" y="777.66116941529242"/>
         </scene>
         <!--Token Transaction-->
         <scene sceneID="L7C-ht-GHs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9AQ-R8-gYX" sceneMemberID="firstResponder"/>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="loY-IW-dMq" customClass="ViewController" customModule="TokenRanks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="loY-IW-dMq" customClass="TopTransactionViewController" customModule="TokenRanks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G0k-lp-2RA"/>
                         <viewControllerLayoutGuide type="bottom" id="5k0-ns-HlD"/>
@@ -127,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="MEg-he-oP5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="MEg-he-oP5" customClass="TopTransactionTableViewCell" customModule="TokenRanks" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MEg-he-oP5" id="Euh-fE-YfH">
@@ -143,7 +150,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xa5b824da7e01a929900781b1fd22f4c09cec75f5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-so-A2q">
                                                     <rect key="frame" x="54" y="8" width="321" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="248,921" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-Oa-BaO">
@@ -153,13 +160,11 @@
                                                         <constraint firstAttribute="height" constant="26" id="ie9-St-eOs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.28%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-2H-GG0">
                                                     <rect key="frame" x="54" y="62" width="81" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="一个交易所地址" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpg-6o-tzW">
@@ -189,6 +194,13 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="kpg-6o-tzW" secondAttribute="bottom" constant="-0.5" id="yfg-yk-Qgz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="4w0-so-A2q" id="znr-XF-ic0"/>
+                                            <outlet property="memoTextView" destination="kpg-6o-tzW" id="2sJ-fP-QlB"/>
+                                            <outlet property="percantageLabel" destination="wzl-2H-GG0" id="9JS-r7-gA8"/>
+                                            <outlet property="quantityLabel" destination="K4O-Oa-BaO" id="N9b-ZZ-d0f"/>
+                                            <outlet property="rankLabel" destination="xzM-h7-kqF" id="ReL-Zc-qh5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -206,7 +218,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Token Transaction" id="cXb-60-1sv"/>
+                    <connections>
+                        <outlet property="tableView" destination="Iaw-Dn-t8H" id="6Zn-ip-R0t"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AQ-R8-gYX" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1956" y="1530.5847076461771"/>
         </scene>

@@ -20,6 +20,7 @@ extension APIFactory {
         Alamofire.request("http://newbillions.com/topTokenHolders/\(timestamp)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success (let value):
+                print("sucessfully load the requestTopTokenHolder")
                 let holders = TopTokenHolder.fromJSONArray(value: value)
                 completion(holders)
             case .failure(let error):

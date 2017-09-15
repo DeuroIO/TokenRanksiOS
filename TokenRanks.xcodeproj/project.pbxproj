@@ -9,17 +9,22 @@
 /* Begin PBXBuildFile section */
 		3E5904B53BEC84F0280B29CA /* Pods_TokenRanks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981E537BAABF02AEED3F1C5B /* Pods_TokenRanks.framework */; };
 		C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B21F6B592D008D5D35 /* AppDelegate.swift */; };
-		C098D6B51F6B592D008D5D35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B41F6B592D008D5D35 /* ViewController.swift */; };
+		C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */; };
 		C098D6B81F6B592D008D5D35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B61F6B592D008D5D35 /* Main.storyboard */; };
 		C098D6BA1F6B592D008D5D35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B91F6B592D008D5D35 /* Assets.xcassets */; };
 		C098D6BD1F6B592D008D5D35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6BB1F6B592D008D5D35 /* LaunchScreen.storyboard */; };
-		C098D6C51F6B5D28008D5D35 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */; };
+		C098D6C51F6B5D28008D5D35 /* Holder+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6C41F6B5D28008D5D35 /* Holder+TableViewDelegate.swift */; };
 		C0FB8DA51F6C7B3900B6CA2F /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DA41F6C7B3900B6CA2F /* APIFactory.swift */; };
 		C0FB8DA81F6C7D6300B6CA2F /* TopTokenHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DA71F6C7D6300B6CA2F /* TopTokenHolder.swift */; };
 		C0FB8DAB1F6C7D7100B6CA2F /* TopTokenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DAA1F6C7D7100B6CA2F /* TopTokenTransaction.swift */; };
 		C0FB8DAD1F6C7D9000B6CA2F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DAC1F6C7D9000B6CA2F /* Token.swift */; };
 		C0FB8DAF1F6C7DAC00B6CA2F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DAE1F6C7DAC00B6CA2F /* Transaction.swift */; };
 		C0FB8DB11F6C7DC100B6CA2F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DB01F6C7DC100B6CA2F /* Account.swift */; };
+		C0FB8DB51F6C8A9800B6CA2F /* TopAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DB41F6C8A9800B6CA2F /* TopAccountTableViewCell.swift */; };
+		C0FB8DB91F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DB81F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift */; };
+		C0FB8DBB1F6C8FD000B6CA2F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DBA1F6C8FD000B6CA2F /* Constant.swift */; };
+		C0FB8DBF1F6C91B300B6CA2F /* TopTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DBE1F6C91B300B6CA2F /* TopTransactionViewController.swift */; };
+		C0FB8DC31F6C927B00B6CA2F /* Transction+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB8DC21F6C927B00B6CA2F /* Transction+TableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,18 +33,23 @@
 		9FBB1FE26EB27C37ACC28C7F /* Pods-TokenRanks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokenRanks.release.xcconfig"; path = "Pods/Target Support Files/Pods-TokenRanks/Pods-TokenRanks.release.xcconfig"; sourceTree = "<group>"; };
 		C098D6AF1F6B592D008D5D35 /* TokenRanks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRanks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098D6B21F6B592D008D5D35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C098D6B41F6B592D008D5D35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHolderViewController.swift; sourceTree = "<group>"; };
 		C098D6B71F6B592D008D5D35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C098D6B91F6B592D008D5D35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C098D6BC1F6B592D008D5D35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C098D6BE1F6B592D008D5D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		C098D6C41F6B5D28008D5D35 /* Holder+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Holder+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		C0FB8DA41F6C7B3900B6CA2F /* APIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		C0FB8DA71F6C7D6300B6CA2F /* TopTokenHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTokenHolder.swift; sourceTree = "<group>"; };
 		C0FB8DAA1F6C7D7100B6CA2F /* TopTokenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTokenTransaction.swift; sourceTree = "<group>"; };
 		C0FB8DAC1F6C7D9000B6CA2F /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C0FB8DAE1F6C7DAC00B6CA2F /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C0FB8DB01F6C7DC100B6CA2F /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		C0FB8DB41F6C8A9800B6CA2F /* TopAccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAccountTableViewCell.swift; sourceTree = "<group>"; };
+		C0FB8DB81F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTransactionTableViewCell.swift; sourceTree = "<group>"; };
+		C0FB8DBA1F6C8FD000B6CA2F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C0FB8DBE1F6C91B300B6CA2F /* TopTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTransactionViewController.swift; sourceTree = "<group>"; };
+		C0FB8DC21F6C927B00B6CA2F /* Transction+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transction+TableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +94,12 @@
 		C098D6B11F6B592D008D5D35 /* TokenRanks */ = {
 			isa = PBXGroup;
 			children = (
-				C098D6B21F6B592D008D5D35 /* AppDelegate.swift */,
-				C098D6B41F6B592D008D5D35 /* ViewController.swift */,
-				C098D6C41F6B5D28008D5D35 /* TableViewDelegate.swift */,
 				C0FB8DA61F6C7B6D00B6CA2F /* API */,
+				C0FB8DB31F6C89DE00B6CA2F /* Controller */,
+				C0FB8DB71F6C8AA100B6CA2F /* View */,
 				C0FB8DA91F6C7D6B00B6CA2F /* Model */,
 				C0FB8DB21F6C873F00B6CA2F /* Other */,
+				C0FB8DBA1F6C8FD000B6CA2F /* Constant.swift */,
 			);
 			path = TokenRanks;
 			sourceTree = "<group>";
@@ -117,12 +127,49 @@
 		C0FB8DB21F6C873F00B6CA2F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C098D6B21F6B592D008D5D35 /* AppDelegate.swift */,
 				C098D6B61F6B592D008D5D35 /* Main.storyboard */,
 				C098D6B91F6B592D008D5D35 /* Assets.xcassets */,
 				C098D6BB1F6B592D008D5D35 /* LaunchScreen.storyboard */,
 				C098D6BE1F6B592D008D5D35 /* Info.plist */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		C0FB8DB31F6C89DE00B6CA2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0FB8DC11F6C925D00B6CA2F /* TokenTransaction */,
+				C0FB8DC01F6C925500B6CA2F /* TokenHolder */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C0FB8DB71F6C8AA100B6CA2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0FB8DB41F6C8A9800B6CA2F /* TopAccountTableViewCell.swift */,
+				C0FB8DB81F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C0FB8DC01F6C925500B6CA2F /* TokenHolder */ = {
+			isa = PBXGroup;
+			children = (
+				C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */,
+				C098D6C41F6B5D28008D5D35 /* Holder+TableViewDelegate.swift */,
+			);
+			name = TokenHolder;
+			sourceTree = "<group>";
+		};
+		C0FB8DC11F6C925D00B6CA2F /* TokenTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				C0FB8DBE1F6C91B300B6CA2F /* TopTransactionViewController.swift */,
+				C0FB8DC21F6C927B00B6CA2F /* Transction+TableViewDelegate.swift */,
+			);
+			name = TokenTransaction;
 			sourceTree = "<group>";
 		};
 		D3DFF2305149C75EEB9DBC44 /* Frameworks */ = {
@@ -275,14 +322,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FB8DAB1F6C7D7100B6CA2F /* TopTokenTransaction.swift in Sources */,
+				C0FB8DB51F6C8A9800B6CA2F /* TopAccountTableViewCell.swift in Sources */,
 				C0FB8DAD1F6C7D9000B6CA2F /* Token.swift in Sources */,
 				C0FB8DAF1F6C7DAC00B6CA2F /* Transaction.swift in Sources */,
-				C098D6B51F6B592D008D5D35 /* ViewController.swift in Sources */,
+				C0FB8DB91F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift in Sources */,
+				C0FB8DC31F6C927B00B6CA2F /* Transction+TableViewDelegate.swift in Sources */,
+				C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */,
 				C0FB8DA81F6C7D6300B6CA2F /* TopTokenHolder.swift in Sources */,
+				C0FB8DBF1F6C91B300B6CA2F /* TopTransactionViewController.swift in Sources */,
 				C0FB8DB11F6C7DC100B6CA2F /* Account.swift in Sources */,
 				C0FB8DA51F6C7B3900B6CA2F /* APIFactory.swift in Sources */,
-				C098D6C51F6B5D28008D5D35 /* TableViewDelegate.swift in Sources */,
+				C098D6C51F6B5D28008D5D35 /* Holder+TableViewDelegate.swift in Sources */,
 				C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */,
+				C0FB8DBB1F6C8FD000B6CA2F /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

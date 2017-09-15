@@ -25,18 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         
-        
-        APIFactory.sharedInstance.requestTopTokenHolder(timestamp: "20170915") { (holders) in
-            if let m_holders = holders {
-                print(m_holders)
-            }
-        }
-        
-        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: "20170915") { (transactions) in
-            if let m_transactions = transactions {
-                print(m_transactions)
-            }
-        }
         return true
     }
 
