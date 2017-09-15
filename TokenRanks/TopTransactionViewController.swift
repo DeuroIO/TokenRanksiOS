@@ -27,6 +27,8 @@ class TopTransactionViewController: UIViewController {
         
         return refreshControl
     }()
+    
+    var currentDate = Date()
 
     func loadData(){
         if isLoadingData {
@@ -34,7 +36,7 @@ class TopTransactionViewController: UIViewController {
         }
         isLoadingData = true
         refreshControl.beginRefreshing()
-        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getCurrentDateInString()) { (transactions) in
+        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: currentDate)) { (transactions) in
             self.isLoadingData = false
             self.refreshControl.endRefreshing()
             if let m_transactions = transactions {
@@ -51,8 +53,9 @@ class TopTransactionViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.tabBarController?.tabBar.barTintColor = UIColor.black
         self.tabBarController?.tabBar.tintColor = UIColor.white
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.dateSelected))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.dateSelected))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.nextdateSelected))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.prevDateSelected))
+        self.navigationItem.title = Constant.getDateInString(date: currentDate)
         loadData()
         // Do any additional setup after loading the view.
     }
@@ -62,8 +65,27 @@ class TopTransactionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func dateSelected(){
-        self.title = "Sep 13"
+    
+    
+    func nextdateSelected(){
+        if let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) {
+            currentDate = nextDate
+            self.navigationItem.title = Constant.getDateInString(date: currentDate)
+            loadData()
+        } else {
+            
+        }
+        
+    }
+    func prevDateSelected(){
+        if let prevDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) {
+            currentDate = prevDate
+            self.navigationItem.title = Constant.getDateInString(date: currentDate)
+            loadData()
+        } else {
+            
+        }
+        
     }
 
     /*

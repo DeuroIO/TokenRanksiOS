@@ -11,9 +11,12 @@ struct Constant {
     static let kyberTotalAmountOfTokenDenominator = 2260000.0
     
     static func getCurrentDateInString()->String{
+        return getDateInString(date: Date())
+    }
+    
+    static func getDateInString(date:Date)->String{
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
-        let date = Date()
         let dateString = dateFormatter.string(from: date)
         return dateString
     }
