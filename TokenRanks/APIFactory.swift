@@ -42,4 +42,16 @@ extension APIFactory {
             }
         }
     }
+    
+    func editAnAccount(account_address:String,memo:String){
+        Alamofire.request("http://newbillions.com/update_account/\(account_address)/", method: .post, parameters: ["memo":memo], encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
+            switch response.result {
+            case .success (let value):
+                print("success \(value)")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+    }
 }
