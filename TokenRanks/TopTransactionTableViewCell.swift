@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopTransactionTableViewCell: UITableViewCell {
+class TopTransactionTableViewCell: UITableViewCell,UITextViewDelegate {
 
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -18,13 +18,18 @@ class TopTransactionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.memoTextView.delegate = self
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if let address = addressLabel.text {
+            APIFactory.sharedInstance.editAnAccount(account_address: address, memo: textView.text)
+        }
+    }
 }

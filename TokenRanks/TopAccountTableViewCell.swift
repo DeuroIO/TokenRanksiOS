@@ -30,9 +30,6 @@ class TopAccountTableViewCell: UITableViewCell,UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            return
-        }
         if let address = addressLabel.text {
             APIFactory.sharedInstance.editAnAccount(account_address: address, memo: textView.text)
         }
