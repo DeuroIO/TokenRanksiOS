@@ -1,0 +1,6 @@
+framework module Pods_TokenRanks {
+  umbrella header "Pods-TokenRanks-umbrella.h"
+
+  export *
+  module * { export * }
+}
