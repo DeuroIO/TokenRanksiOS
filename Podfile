@@ -9,6 +9,7 @@ target 'TokenRanks' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManager'
+  pod 'MMDrawerController'
   # Pods for TokenRanks
 
 end
