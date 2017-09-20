@@ -11,6 +11,7 @@
 		C01E42D31F72F59D00E1150E /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42D21F72F59D00E1150E /* Tool.swift */; };
 		C01E42D51F72FBBD00E1150E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42D41F72FBBD00E1150E /* SettingViewController.swift */; };
 		C01E42D81F72FC8200E1150E /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42D71F72FC8200E1150E /* Drawer.swift */; };
+		C01E42DC1F72FFBE00E1150E /* HolderDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */; };
 		C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B21F6B592D008D5D35 /* AppDelegate.swift */; };
 		C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */; };
 		C098D6B81F6B592D008D5D35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B61F6B592D008D5D35 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		C01E42D21F72F59D00E1150E /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		C01E42D41F72FBBD00E1150E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C01E42D71F72FC8200E1150E /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderDrawer.swift; sourceTree = "<group>"; };
 		C098D6AF1F6B592D008D5D35 /* TokenRanks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRanks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098D6B21F6B592D008D5D35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHolderViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */,
+				C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */,
 				C098D6C41F6B5D28008D5D35 /* Holder+TableViewDelegate.swift */,
 			);
 			name = TokenHolder;
@@ -348,6 +351,7 @@
 				C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */,
 				C0FB8DA81F6C7D6300B6CA2F /* TopTokenHolder.swift in Sources */,
 				C0FB8DBF1F6C91B300B6CA2F /* TopTransactionViewController.swift in Sources */,
+				C01E42DC1F72FFBE00E1150E /* HolderDrawer.swift in Sources */,
 				C0FB8DB11F6C7DC100B6CA2F /* Account.swift in Sources */,
 				C01E42D31F72F59D00E1150E /* Tool.swift in Sources */,
 				C0FB8DA51F6C7B3900B6CA2F /* APIFactory.swift in Sources */,
