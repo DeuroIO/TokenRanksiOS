@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQx-qs-ePT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -225,10 +225,35 @@
             </objects>
             <point key="canvasLocation" x="1956" y="1530.5847076461771"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="iPV-qf-7YD">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="O5o-LE-rC6" customClass="SettingViewController" customModule="TokenRanks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dM-E5-iBm"/>
+                        <viewControllerLayoutGuide type="bottom" id="3bC-AT-Uy4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGD-l2-hcO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOj-bf-lbf">
+                                <rect key="frame" x="123" y="226" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hx1-Eo-2Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940" y="1433"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WvF-7Q-t4z">
             <objects>
-                <tabBarController id="VQx-qs-ePT" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ArchiveNavigationController" id="VQx-qs-ePT" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UNA-X0-fI5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="19e-q1-RNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

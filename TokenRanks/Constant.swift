@@ -6,7 +6,7 @@
 //  Copyright © 2017 Gelei. All rights reserved.
 //
 
-import Foundation
+import UIKit
 struct Constant {
     static let kyberTotalAmountOfTokenDenominator = 2260000.0
     
@@ -22,6 +22,9 @@ struct Constant {
     }
     
     static var currentDate = Date()
+    static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+    
+    static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 }
 
 extension Double {

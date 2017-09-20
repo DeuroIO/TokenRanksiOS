@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class TopTransactionViewController: UIViewController {
 
@@ -45,6 +46,7 @@ class TopTransactionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.backgroundView = refreshControl
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.barTintColor = UIColor.white
@@ -52,7 +54,7 @@ class TopTransactionViewController: UIViewController {
         self.tabBarController?.tabBar.barTintColor = UIColor.black
         self.tabBarController?.tabBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.nextdateSelected))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.prevDateSelected))
+        self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TopTransactionViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.prevDateSelected))], animated: true)
         self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
         loadData()
         // Do any additional setup after loading the view.
