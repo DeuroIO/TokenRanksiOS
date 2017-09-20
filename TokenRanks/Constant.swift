@@ -20,6 +20,8 @@ struct Constant {
         let dateString = dateFormatter.string(from: date)
         return dateString
     }
+    
+    static var currentDate = Date()
 }
 
 extension Double {
