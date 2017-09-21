@@ -30,6 +30,13 @@ struct Constant {
             }
         }
     }
+    static var tokens : [Token] = [] {
+        didSet {
+            if tokens.count != 0 {
+                Constant.currentToken = tokens[0]
+            }
+        }
+    }
     
     static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
     static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height

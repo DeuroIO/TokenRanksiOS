@@ -24,6 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         Tool.setArchiveEntryPoint()
+        
+        let loadingHud = Tool.showMiddleHint("Loading data from server", shouldHide: false)
+        APIFactory.sharedInstance.getAllTokens { (tokens) in
+            if let m_tokens = tokens {
+                Constant.tokens = m_tokens
+                
+            }
+            loadingHud.hide(animated: false)
+            Tool.postToNotificationCenter(name: Constant.didGetAllTheTokens, object: nil, userInfo: nil)
+        }
         return true
     }
 

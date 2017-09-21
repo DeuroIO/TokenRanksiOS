@@ -67,6 +67,7 @@ class TokenHolderViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.nextdateSelected))
         self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TokenHolderViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.prevDateSelected))], animated: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(TokenHolderViewController.loadData), name: NSNotification.Name(rawValue: Constant.didGetAllTheTokens), object: nil)
         loadData()
         // Do any additional setup after loading the view, typically from a nib.
     }

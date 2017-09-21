@@ -68,6 +68,7 @@ class TopTransactionViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.nextdateSelected))
         self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TopTransactionViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.prevDateSelected))], animated: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(TopTransactionViewController.loadData), name: NSNotification.Name(rawValue: Constant.didGetAllTheTokens), object: nil)
         loadData()
         // Do any additional setup after loading the view.
     }

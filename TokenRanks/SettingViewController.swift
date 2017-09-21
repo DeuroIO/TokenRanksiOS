@@ -14,26 +14,13 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Token Analytics"
-        loadData()
+        self.tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingViewController.didFinishAllTokenLoading), name: NSNotification.Name(rawValue: Constant.didGetAllTheTokens), object: nil)
         // Do any additional setup after loading the view.
     }
-    var tokens : [Token] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
-    func loadData(){
-        let loadingHud = Tool.showMiddleHint("Loading", shouldHide: false)
-        APIFactory.sharedInstance.getAllTokens { (tokens) in
-            loadingHud.hide(animated: false)
-            if let m_token = tokens {
-                if m_token.count != 0 {
-                    Constant.currentToken = m_token[0]
-                    self.tokens = m_token
-                }
-            }
-            Tool.postToNotificationCenter(name: Constant.didGetAllTheTokens, object: nil, userInfo: nil)
-        }
+    
+    func didFinishAllTokenLoading(){
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,16 +29,16 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tokens.count
+        return Constant.tokens.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = tokens[indexPath.row].coin_name
+        cell.textLabel?.text = Constant.tokens[indexPath.row].coin_name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Constant.currentToken = tokens[indexPath.row]
+        Constant.currentToken = Constant.tokens[indexPath.row]
     }
     /*
     // MARK: - Navigation
