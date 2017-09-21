@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,20 +46,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="248,921" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq7-Yq-rwd">
-                                                    <rect key="frame" x="54" y="36" width="42.5" height="26"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="GPi-he-eaQ"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="54" y="36" width="43" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.28%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-4o-GkC">
-                                                    <rect key="frame" x="54" y="62" width="42.5" height="33"/>
+                                                    <rect key="frame" x="54" y="62" width="43" height="29.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="一个交易所地址" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-Bd-dHE">
-                                                    <rect key="frame" x="96.5" y="36" width="245.5" height="56"/>
+                                                    <rect key="frame" x="97" y="36" width="245" height="56"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -66,23 +64,23 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fqY-My-93g" firstAttribute="leading" secondItem="Pq7-Yq-rwd" secondAttribute="leading" id="1In-j6-hom"/>
-                                                <constraint firstItem="fqY-My-93g" firstAttribute="trailing" secondItem="Wob-Bd-dHE" secondAttribute="trailing" id="4SZ-78-saN"/>
-                                                <constraint firstItem="Wob-Bd-dHE" firstAttribute="leading" secondItem="Pyc-4o-GkC" secondAttribute="trailing" id="9qm-WG-4ht"/>
-                                                <constraint firstItem="Pyc-4o-GkC" firstAttribute="top" secondItem="Pq7-Yq-rwd" secondAttribute="bottom" id="E5d-kP-xLU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Pyc-4o-GkC" secondAttribute="bottom" constant="-3.5" id="HoG-e1-JRS"/>
-                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="leading" secondItem="Pyc-4o-GkC" secondAttribute="leading" id="TQ1-Lu-iJ2"/>
-                                                <constraint firstItem="Qkm-HA-jnz" firstAttribute="centerY" secondItem="fmt-sO-24w" secondAttribute="centerY" id="aSU-dJ-EtY"/>
-                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="top" secondItem="Wob-Bd-dHE" secondAttribute="top" id="abt-gJ-6RV"/>
-                                                <constraint firstItem="Wob-Bd-dHE" firstAttribute="leading" secondItem="Pq7-Yq-rwd" secondAttribute="trailing" id="ef9-Nh-3nl"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fqY-My-93g" secondAttribute="trailing" id="hEn-bV-ovC"/>
-                                                <constraint firstItem="Qkm-HA-jnz" firstAttribute="leading" secondItem="fmt-sO-24w" secondAttribute="leadingMargin" id="jcN-6w-rlx"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Wob-Bd-dHE" secondAttribute="bottom" constant="-0.5" id="nY3-Wg-CaA"/>
-                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="leading" secondItem="Qkm-HA-jnz" secondAttribute="trailing" id="sGN-Ee-5Rr"/>
-                                                <constraint firstItem="fqY-My-93g" firstAttribute="leading" secondItem="fmt-sO-24w" secondAttribute="leadingMargin" constant="46" id="tYe-B8-Iwy"/>
-                                                <constraint firstItem="fqY-My-93g" firstAttribute="top" secondItem="fmt-sO-24w" secondAttribute="topMargin" id="uO0-gr-c7d"/>
-                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="top" secondItem="fqY-My-93g" secondAttribute="bottom" id="ue7-gY-Kgv"/>
-                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="centerY" secondItem="fmt-sO-24w" secondAttribute="centerY" id="wd7-U4-FgA"/>
+                                                <constraint firstItem="Pyc-4o-GkC" firstAttribute="top" secondItem="Pq7-Yq-rwd" secondAttribute="bottom" id="3d4-xg-VHf"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="top" secondItem="fqY-My-93g" secondAttribute="bottom" id="BLb-e7-TiL"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="baseline" secondItem="Qkm-HA-jnz" secondAttribute="firstBaseline" id="MYm-i5-qoq"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="centerY" secondItem="fmt-sO-24w" secondAttribute="centerY" id="P9a-Tn-96f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wob-Bd-dHE" secondAttribute="bottom" constant="-0.5" id="PC7-JI-naT"/>
+                                                <constraint firstItem="Wob-Bd-dHE" firstAttribute="leading" secondItem="Pq7-Yq-rwd" secondAttribute="trailing" id="Q5R-2b-LD9"/>
+                                                <constraint firstItem="Qkm-HA-jnz" firstAttribute="leading" secondItem="fmt-sO-24w" secondAttribute="leadingMargin" id="Qv0-zO-rTT"/>
+                                                <constraint firstItem="Qkm-HA-jnz" firstAttribute="centerY" secondItem="fmt-sO-24w" secondAttribute="centerY" id="TN5-tl-7sY"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="leading" secondItem="Qkm-HA-jnz" secondAttribute="trailing" id="UAr-Vc-KwW"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="leading" secondItem="Pyc-4o-GkC" secondAttribute="leading" id="VpK-SC-VGi"/>
+                                                <constraint firstItem="fqY-My-93g" firstAttribute="leading" secondItem="Pq7-Yq-rwd" secondAttribute="leading" id="dnl-GO-zHf"/>
+                                                <constraint firstItem="fqY-My-93g" firstAttribute="leading" secondItem="fmt-sO-24w" secondAttribute="leadingMargin" constant="46" id="gZ4-Ua-Dfm"/>
+                                                <constraint firstItem="Pyc-4o-GkC" firstAttribute="trailing" secondItem="Pq7-Yq-rwd" secondAttribute="trailing" id="ge4-je-ZyB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pyc-4o-GkC" secondAttribute="bottom" id="hwq-cE-5PV"/>
+                                                <constraint firstItem="fqY-My-93g" firstAttribute="top" secondItem="fmt-sO-24w" secondAttribute="topMargin" id="m8u-yW-2lB"/>
+                                                <constraint firstItem="Pq7-Yq-rwd" firstAttribute="top" secondItem="Wob-Bd-dHE" secondAttribute="top" id="wy2-3Q-gUC"/>
+                                                <constraint firstItem="fqY-My-93g" firstAttribute="trailing" secondItem="Wob-Bd-dHE" secondAttribute="trailing" id="yO7-4z-fKE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -102,10 +100,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="32v-sk-FqK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ady-a5-tb7"/>
-                            <constraint firstItem="32v-sk-FqK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="gha-qI-t8F"/>
-                            <constraint firstItem="32v-sk-FqK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rBI-Ms-fW3"/>
-                            <constraint firstAttribute="trailing" secondItem="32v-sk-FqK" secondAttribute="trailing" id="wJb-uM-sDc"/>
+                            <constraint firstAttribute="trailing" secondItem="32v-sk-FqK" secondAttribute="trailing" id="0zF-BK-PIn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="32v-sk-FqK" secondAttribute="bottom" id="Yxu-Kb-RAN"/>
+                            <constraint firstItem="32v-sk-FqK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ahN-RZ-4xY"/>
+                            <constraint firstItem="32v-sk-FqK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lN1-Jw-SZt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Token Holder" id="XXd-iY-LMg"/>

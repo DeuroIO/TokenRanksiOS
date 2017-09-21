@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C098D6AE1F6B592D008D5D35"
-               BuildableName = "TokenRanks.app"
+               BuildableName = "Analytics.app"
                BlueprintName = "TokenRanks"
                ReferencedContainer = "container:TokenRanks.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C098D6AE1F6B592D008D5D35"
-            BuildableName = "TokenRanks.app"
+            BuildableName = "Analytics.app"
             BlueprintName = "TokenRanks"
             ReferencedContainer = "container:TokenRanks.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C098D6AE1F6B592D008D5D35"
-            BuildableName = "TokenRanks.app"
+            BuildableName = "Analytics.app"
             BlueprintName = "TokenRanks"
             ReferencedContainer = "container:TokenRanks.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C098D6AE1F6B592D008D5D35"
-            BuildableName = "TokenRanks.app"
+            BuildableName = "Analytics.app"
             BlueprintName = "TokenRanks"
             ReferencedContainer = "container:TokenRanks.xcodeproj">
          </BuildableReference>

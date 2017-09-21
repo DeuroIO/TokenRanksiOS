@@ -35,6 +35,11 @@ class TopTransactionViewController: UIViewController {
             return
         }
         isLoadingData = true
+        if Constant.currentToken.count >= 5 {
+            let index = Constant.currentToken.index(Constant.currentToken.startIndex, offsetBy: 5)
+            Constant.currentToken = Constant.currentToken.substring(to: index)
+        }
+        self.navigationItem.title = "\(Constant.currentToken) \(Constant.getDateInString(date: Constant.currentDate))"
         loadingHud = Tool.showMiddleHint("Loading Transaction", shouldHide: false)
         refreshControl.beginRefreshing()
         APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (transactions) in
@@ -60,14 +65,12 @@ class TopTransactionViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.nextdateSelected))
         self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TopTransactionViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TopTransactionViewController.prevDateSelected))], animated: true)
-        self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
         loadData()
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
         loadData()
     }
     
@@ -79,7 +82,6 @@ class TopTransactionViewController: UIViewController {
     func nextdateSelected(){
         if let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: Constant.currentDate) {
             Constant.currentDate = nextDate
-            self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
             loadData()
         } else {
             
@@ -89,7 +91,6 @@ class TopTransactionViewController: UIViewController {
     func prevDateSelected(){
         if let prevDate = Calendar.current.date(byAdding: .day, value: -1, to: Constant.currentDate) {
             Constant.currentDate = prevDate
-            self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
             loadData()
         } else {
             

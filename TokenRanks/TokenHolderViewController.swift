@@ -35,6 +35,11 @@ class TokenHolderViewController: UIViewController {
             return
         }
         isLoadingData = true
+        if Constant.currentToken.count >= 5 {
+            let index = Constant.currentToken.index(Constant.currentToken.startIndex, offsetBy: 5)
+            Constant.currentToken = Constant.currentToken.substring(to: index)
+        }
+        self.navigationItem.title = "\(Constant.currentToken) \(Constant.getDateInString(date: Constant.currentDate))"
         refreshControl.beginRefreshing()
         loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
         APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (holders) in
@@ -59,14 +64,12 @@ class TokenHolderViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.nextdateSelected))
         self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TokenHolderViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.prevDateSelected))], animated: true)
-        self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
         loadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
         loadData()
     }
     
@@ -78,7 +81,6 @@ class TokenHolderViewController: UIViewController {
     func nextdateSelected(){
         if let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: Constant.currentDate) {
             Constant.currentDate = nextDate
-            self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
             loadData()
         } else {
             
@@ -88,7 +90,6 @@ class TokenHolderViewController: UIViewController {
     func prevDateSelected(){
         if let prevDate = Calendar.current.date(byAdding: .day, value: -1, to: Constant.currentDate) {
             Constant.currentDate = prevDate
-            self.navigationItem.title = Constant.getDateInString(date: Constant.currentDate)
             loadData()
         } else {
             
