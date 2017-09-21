@@ -39,7 +39,7 @@
 		C01E42D41F72FBBD00E1150E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C01E42D71F72FC8200E1150E /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderDrawer.swift; sourceTree = "<group>"; };
-		C098D6AF1F6B592D008D5D35 /* TokenRanks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRanks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C098D6AF1F6B592D008D5D35 /* Analytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098D6B21F6B592D008D5D35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHolderViewController.swift; sourceTree = "<group>"; };
 		C098D6B71F6B592D008D5D35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		C098D6B01F6B592D008D5D35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C098D6AF1F6B592D008D5D35 /* TokenRanks.app */,
+				C098D6AF1F6B592D008D5D35 /* Analytics.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			);
 			name = TokenRanks;
 			productName = TokenRanks;
-			productReference = C098D6AF1F6B592D008D5D35 /* TokenRanks.app */;
+			productReference = C098D6AF1F6B592D008D5D35 /* Analytics.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -500,7 +500,7 @@
 				INFOPLIST_FILE = TokenRanks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gelei.TokenRanks1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Analytics;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -517,7 +517,7 @@
 				INFOPLIST_FILE = TokenRanks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gelei.TokenRanks1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Analytics;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
