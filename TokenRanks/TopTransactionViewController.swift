@@ -8,6 +8,7 @@
 
 import UIKit
 import MMDrawerController
+import MBProgressHUD
 
 class TopTransactionViewController: UIViewController {
 
@@ -34,15 +35,19 @@ class TopTransactionViewController: UIViewController {
             return
         }
         isLoadingData = true
+        loadingHud = Tool.showMiddleHint("Loading Transaction", shouldHide: false)
         refreshControl.beginRefreshing()
         APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (transactions) in
             self.isLoadingData = false
+            self.loadingHud.hide(animated: true)
             self.refreshControl.endRefreshing()
             if let m_transactions = transactions {
                 self.transactions = m_transactions
             }
         }
     }
+    
+    var loadingHud: MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()

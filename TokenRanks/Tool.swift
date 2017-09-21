@@ -30,3 +30,43 @@ struct Tool {
         setFirstVC(initailVC: drawerController)
     }
 }
+
+import MBProgressHUD
+extension Tool {
+    // MARK: HUD
+    static func hudHelper(_ hint: String)->MBProgressHUD{
+        let view: UIView? = UIApplication.shared.keyWindow
+        let hud = MBProgressHUD.showAdded(to: view!, animated: true)
+        hud.isUserInteractionEnabled = false
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = hint
+        hud.label.numberOfLines = 0
+        hud.label.font = UIFont.systemFont(ofSize: CGFloat(15))
+        hud.margin = 10.0
+        hud.offset = CGPoint(x: CGFloat(hud.offset.x), y: CGFloat(0))
+        hud.removeFromSuperViewOnHide = true
+        return hud
+    }
+    
+    static func showMiddleHint(_ hint: String,shouldHide:Bool)->MBProgressHUD {
+        let hud = hudHelper(hint)
+        if shouldHide {
+            hud.hide(animated: true, afterDelay: 3)
+        }
+        return hud
+    }
+    
+    static func showMiddleHint(_ hint: String,shouldHide:Bool, delay:TimeInterval)->MBProgressHUD {
+        let hud = hudHelper(hint)
+        if shouldHide {
+            hud.hide(animated: true, afterDelay: delay)
+        }
+        return hud
+    }
+    
+    static func showErrorHint(_ hint: String){
+        let hud = hudHelper(hint)
+        hud.contentColor = UIColor.red
+        hud.hide(animated: true, afterDelay: 3)
+    }
+}

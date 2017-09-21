@@ -10,6 +10,7 @@ target 'TokenRanks' do
   pod 'SwiftyJSON'
   pod 'IQKeyboardManager'
   pod 'MMDrawerController'
+  pod 'MBProgressHUD'
   # Pods for TokenRanks
 
 end

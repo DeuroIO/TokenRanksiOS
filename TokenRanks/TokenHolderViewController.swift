@@ -8,6 +8,7 @@
 
 import UIKit
 import MMDrawerController
+import MBProgressHUD
 
 class TokenHolderViewController: UIViewController {
 
@@ -35,14 +36,18 @@ class TokenHolderViewController: UIViewController {
         }
         isLoadingData = true
         refreshControl.beginRefreshing()
+        loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
         APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (holders) in
             self.refreshControl.endRefreshing()
+            self.loadingHud.hide(animated: true)
             self.isLoadingData = false
             if let m_holders = holders {
                 self.holders = m_holders
             }
         }
     }
+    
+    var loadingHud : MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()

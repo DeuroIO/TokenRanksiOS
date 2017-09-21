@@ -4,6 +4,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.12)
   - IQKeyboardManager (4.0.10)
+  - MBProgressHUD (1.0.0)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - IQKeyboardManager
+  - MBProgressHUD
   - MMDrawerController
   - SwiftyJSON
 
@@ -31,9 +33,10 @@ SPEC CHECKSUMS:
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f5b4ccec0e05b063ab4e735725a26752ce0f3416
+PODFILE CHECKSUM: 8d91fcaaf9bd3ef09f566167c22ff46690b3fdae
 
 COCOAPODS: 1.2.0
