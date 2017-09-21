@@ -10,10 +10,23 @@ import UIKit
 
 class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadData()
         // Do any additional setup after loading the view.
+    }
+    var tokens : [Token] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    func loadData(){
+        APIFactory.sharedInstance.getAllTokens { (tokens) in
+            if let m_token = tokens {
+                self.tokens = m_token
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,12 +35,16 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.tokens.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Kyber"
+        cell.textLabel?.text = tokens[indexPath.row].coin_name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Constant.currentToken = tokens[indexPath.row]
     }
     /*
     // MARK: - Navigation

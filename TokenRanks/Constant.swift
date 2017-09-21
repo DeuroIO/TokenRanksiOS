@@ -22,7 +22,8 @@ struct Constant {
     }
     
     static var currentDate = Date()
-    static var currentToken = "Kyber"
+    static var currentTokenString = "Kyber"
+    static var currentToken : Token? = nil
     
     static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
     static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
