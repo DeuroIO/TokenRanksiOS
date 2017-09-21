@@ -23,4 +23,15 @@ struct Token{
         
         return t
     }
+    
+    static func fromJSONArray(value:Any)->[Token]{
+        
+        let json = JSON(value)["results"].arrayValue
+        var list:[Token] = []
+        for subJSON in json {
+            let token = Token.fromJSON(json: subJSON)
+            list.append(token)
+        }
+        return list
+    }
 }

@@ -54,4 +54,37 @@ extension APIFactory {
 
         }
     }
+    
+    func getAllTokens(completion: @escaping(_ results:[Token]?)->Void){
+        Alamofire.request("http://newbillions.com/get_all_tokens", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result {
+            case .success (let value):
+                let tokens = Token.fromJSONArray(value: value)
+                completion(tokens)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil)
+            }
+        }
+    }
+    
+    func addAToken(name:String,contract_address:String,completion: @escaping(_ results:Bool,_ reason:String)->Void){
+        Alamofire.request("http://newbillions.com/add_token/\(contract_address)/\(name)", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result {
+            case .success (let value):
+                let json = JSON(value)
+                let status = json["status"].stringValue
+                if status != "okay" {
+                    let reason = json["reason"].stringValue
+                    completion(false, reason)
+                } else {
+                    completion(true,"succeed")
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(false,"API request failed")
+            }
+        }
+    }
 }
