@@ -13,6 +13,7 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Token Analytics"
         loadData()
         // Do any additional setup after loading the view.
     }
@@ -22,10 +23,16 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     func loadData(){
+        let loadingHud = Tool.showMiddleHint("Loading", shouldHide: false)
         APIFactory.sharedInstance.getAllTokens { (tokens) in
+            loadingHud.hide(animated: false)
             if let m_token = tokens {
-                self.tokens = m_token
+                if m_token.count != 0 {
+                    Constant.currentToken = m_token[0]
+                    self.tokens = m_token
+                }
             }
+            Tool.postToNotificationCenter(name: Constant.didGetAllTheTokens, object: nil, userInfo: nil)
         }
     }
 

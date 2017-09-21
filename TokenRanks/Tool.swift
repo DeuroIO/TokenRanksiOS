@@ -70,3 +70,12 @@ extension Tool {
         hud.hide(animated: true, afterDelay: 3)
     }
 }
+
+
+extension Tool {
+    //MARK: Helper function to post notification
+    static func postToNotificationCenter(name:String,object:Any?,userInfo:[AnyHashable:Any]?){
+        let center = NotificationCenter.default
+        center.post(name: NSNotification.Name(rawValue: name), object: object, userInfo: userInfo)
+    }
+}

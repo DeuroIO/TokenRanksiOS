@@ -34,6 +34,9 @@ class TokenHolderViewController: UIViewController {
         if isLoadingData {
             return
         }
+        if Constant.currentToken == nil {
+            return
+        }
         isLoadingData = true
         if Constant.currentTokenString.count >= 5 {
             let index = Constant.currentTokenString.index(Constant.currentTokenString.startIndex, offsetBy: 5)
@@ -42,7 +45,7 @@ class TokenHolderViewController: UIViewController {
         self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
         refreshControl.beginRefreshing()
         loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
-        APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (holders) in
+        APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (holders) in
             self.refreshControl.endRefreshing()
             self.loadingHud.hide(animated: true)
             self.isLoadingData = false

@@ -22,11 +22,18 @@ struct Constant {
     }
     
     static var currentDate = Date()
-    static var currentTokenString = "Kyber"
-    static var currentToken : Token? = nil
+    static var currentTokenString = ""
+    static var currentToken : Token? = nil {
+        didSet {
+            if let token = currentToken {
+                currentTokenString = token.coin_name
+            }
+        }
+    }
     
     static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
     static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+    static let didGetAllTheTokens = "didGetAllTheTokens"
 }
 
 extension Double {

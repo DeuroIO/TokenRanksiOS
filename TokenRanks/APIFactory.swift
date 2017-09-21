@@ -15,9 +15,10 @@ struct APIFactory{
     static var sharedInstance = _sharedInstance
 }
 
+let serverEndPoint = "http://newbillions.com"
 extension APIFactory {
-    func requestTopTokenHolder(timestamp:String,completion: @escaping(_ results:[TopTokenHolder]?)->Void){
-        Alamofire.request("http://newbillions.com/topTokenHolders/\(timestamp)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+    func requestTopTokenHolder(timestamp:String,coin_address:String,completion: @escaping(_ results:[TopTokenHolder]?)->Void){
+        Alamofire.request("\(serverEndPoint)/topTokenHolders/\(timestamp)/\(coin_address)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success (let value):
                 print("sucessfully load the requestTopTokenHolder")
@@ -30,8 +31,8 @@ extension APIFactory {
         }
     }
     
-    func requestTopTokenTransactions(timestamp:String,completion: @escaping(_ results:[TopTokenTransaction]?)->Void){
-        Alamofire.request("http://newbillions.com/topTokenTransactions/\(timestamp)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+    func requestTopTokenTransactions(timestamp:String,coin_address:String,completion: @escaping(_ results:[TopTokenTransaction]?)->Void){
+        Alamofire.request("\(serverEndPoint)/topTokenTransactions/\(timestamp)/\(coin_address)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success (let value):
                 let transactions = TopTokenTransaction.fromJSONArray(value: value)
@@ -44,7 +45,7 @@ extension APIFactory {
     }
     
     func editAnAccount(account_address:String,memo:String){
-        Alamofire.request("http://newbillions.com/update_account/\(account_address)/", method: .post, parameters: ["memo":memo], encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
+        Alamofire.request("\(serverEndPoint)/update_account/\(account_address)/", method: .post, parameters: ["memo":memo], encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
             switch response.result {
             case .success (let value):
                 print("success \(value)")
@@ -56,7 +57,7 @@ extension APIFactory {
     }
     
     func getAllTokens(completion: @escaping(_ results:[Token]?)->Void){
-        Alamofire.request("http://newbillions.com/get_all_tokens", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request("\(serverEndPoint)/get_all_tokens", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success (let value):
                 let tokens = Token.fromJSONArray(value: value)
@@ -69,7 +70,7 @@ extension APIFactory {
     }
     
     func addAToken(name:String,contract_address:String,completion: @escaping(_ results:Bool,_ reason:String)->Void){
-        Alamofire.request("http://newbillions.com/add_token/\(contract_address)/\(name)", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request("\(serverEndPoint)/add_token/\(contract_address)/\(name)", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success (let value):
                 let json = JSON(value)

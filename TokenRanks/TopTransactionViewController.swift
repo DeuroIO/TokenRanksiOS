@@ -34,6 +34,9 @@ class TopTransactionViewController: UIViewController {
         if isLoadingData {
             return
         }
+        if Constant.currentToken == nil {
+            return
+        }
         isLoadingData = true
         if Constant.currentTokenString.count >= 5 {
             let index = Constant.currentTokenString.index(Constant.currentTokenString.startIndex, offsetBy: 5)
@@ -42,7 +45,7 @@ class TopTransactionViewController: UIViewController {
         self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
         loadingHud = Tool.showMiddleHint("Loading Transaction", shouldHide: false)
         refreshControl.beginRefreshing()
-        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate)) { (transactions) in
+        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (transactions) in
             self.isLoadingData = false
             self.loadingHud.hide(animated: true)
             self.refreshControl.endRefreshing()
