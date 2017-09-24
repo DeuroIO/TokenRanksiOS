@@ -85,10 +85,14 @@ class TopTransactionViewController: UIViewController {
     
     func nextdateSelected(){
         if let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: Constant.currentDate) {
+            if nextDate > Constant.todayDate {
+                Tool.showErrorHint("Next day is > than today not valid")
+                return
+            }
             Constant.currentDate = nextDate
             loadData()
         } else {
-            
+            Tool.showErrorHint("Next day is not valid")
         }
         
     }
@@ -97,7 +101,7 @@ class TopTransactionViewController: UIViewController {
             Constant.currentDate = prevDate
             loadData()
         } else {
-            
+            Tool.showErrorHint("Prev day is not valid")
         }
         
     }

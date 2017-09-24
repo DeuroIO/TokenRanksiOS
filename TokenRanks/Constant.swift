@@ -22,6 +22,7 @@ struct Constant {
     }
     
     static var currentDate = Date()
+    static let todayDate = Date()
     static var currentTokenString = ""
     static var currentToken : Token? = nil {
         didSet {
