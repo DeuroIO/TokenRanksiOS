@@ -13,7 +13,15 @@ import MMDrawerController
 class AnalyticsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var transactions : [TopTokenTransaction] = [] {
+    var dailyStat : EtherDeltaDailyStat! {
+        didSet {
+            
+            self.totalBuyEthLabel.text = dailyStat.total_eth_buy.rounded(toPlaces: 3).description  + " ETH / " + dailyStat.total_kyber_buy.rounded(toPlaces: 3).description + " KYC"
+            self.totalSellEthLabel.text = dailyStat.total_eth_sell.rounded(toPlaces: 3).description + " ETH / " + dailyStat.total_kyber_sell.rounded(toPlaces: 3).description + " KYC"
+            self.AVGPriceLabel.text = dailyStat.avg_price.rounded(toPlaces: 3).description + " KYC/ETH"
+        }
+    }
+    var transactions : [TopEtherDeltaTransaction] = [] {
         didSet{
             self.tableView.reloadData()
         }
@@ -47,13 +55,18 @@ class AnalyticsViewController: UIViewController {
         }
         self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
         refreshControl.beginRefreshing()
-        loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
-        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (transactions) in
-            self.isLoadingData = false
-            self.loadingHud.hide(animated: true)
-            self.refreshControl.endRefreshing()
-            if let m_transactions = transactions {
-                self.transactions = m_transactions
+        loadingHud = Tool.showMiddleHint("Loading EtherDelta Top txs", shouldHide: false)
+        APIFactory.sharedInstance.requestEtherDeltaDailyStat(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (stats) in
+            if let m_stats = stats {
+                self.dailyStat = m_stats[0]
+            }
+            APIFactory.sharedInstance.requestTopEtherDeltaTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (transactions) in
+                self.isLoadingData = false
+                self.loadingHud.hide(animated: true)
+                self.refreshControl.endRefreshing()
+                if let m_transactions = transactions {
+                    self.transactions = m_transactions
+                }
             }
         }
     }

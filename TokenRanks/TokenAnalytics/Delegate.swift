@@ -21,17 +21,17 @@ extension AnalyticsViewController: UITableViewDelegate,UITableViewDataSource {
         let transaction = self.transactions[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TopTransactionTableViewCell
-        cell.addressLabel.text = transaction.transaction.to_account.account_address
-        cell.quantityLabel.text = transaction.transaction.quantity.formattedWithSeparator
-        cell.memoTextView.text = transaction.transaction.to_account.gussed_name
+        cell.addressLabel.text = transaction.tx_hash
+        cell.quantityLabel.text = transaction.eth_quantity.description + " ETH"
+        cell.memoTextView.text = transaction.from_account.gussed_name
         cell.rankLabel.text = transaction.rank.description
-        cell.percantageLabel.text = (Double(transaction.transaction.quantity) / Constant.kyberTotalAmountOfTokenDenominator).rounded(toPlaces: 3).description + "%"
+        cell.percantageLabel.text = (Double(transaction.token_quantity) / Constant.kyberTotalAmountOfTokenDenominator).rounded(toPlaces: 3).description + "%"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let address = self.transactions[indexPath.row].transaction.tx_hash
+        let address = self.transactions[indexPath.row].tx_hash
         //        _ = UIApplication.shared.open(URL(string: "https://etherscan.io/tx/\(address)")!, options: [:], completionHandler: nil)
         UIPasteboard.general.string = "https://etherscan.io/tx/\(address)"
         tableView.deselectRow(at: indexPath, animated: true)
