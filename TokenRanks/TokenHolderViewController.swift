@@ -42,7 +42,12 @@ class TokenHolderViewController: UIViewController {
             let index = Constant.currentTokenString.index(Constant.currentTokenString.startIndex, offsetBy: 5)
             Constant.currentTokenString = Constant.currentTokenString.substring(to: index)
         }
-        self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
+        if Constant.getDateInString(date: Constant.currentDate) == Constant.getDateInString(date: Constant.todayDate) {
+            self.navigationItem.title = "\(Constant.currentTokenString) Today"
+        } else {
+            self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
+        }
+        
         refreshControl.beginRefreshing()
         loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
         APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (holders) in
