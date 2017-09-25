@@ -15,7 +15,8 @@ struct EtherDeltaDailyStat {
     var total_eth_sell = 0
     var total_kyber_buy = 0
     var total_kyber_sell = 0
-    var avg_price = 0.0
+    var avg_buy_price = 0.0
+    var avg_sell_price = 0.0
     
     static func fromJSON(json:JSON)->EtherDeltaDailyStat{
         let token = Token.fromJSON(json: json["token_name"])
@@ -24,8 +25,8 @@ struct EtherDeltaDailyStat {
         let total_eth_sell = json["total_eth_sell"].numberValue
         let total_kyber_buy = json["total_kyber_buy"].numberValue
         let total_kyber_sell = json["total_kyber_sell"].numberValue
-        let avg_price = json["avg_price"].numberValue
-        
+        let avg_buy_price = json["avg_buy_price"].numberValue
+        let avg_sell_price = json["avg_sell_price"].numberValue
         
         var etherDeltaDailyStat = EtherDeltaDailyStat()
         etherDeltaDailyStat.token_name = token
@@ -34,7 +35,8 @@ struct EtherDeltaDailyStat {
         etherDeltaDailyStat.total_eth_sell = total_eth_sell.intValue
         etherDeltaDailyStat.total_kyber_buy = total_kyber_buy.intValue
         etherDeltaDailyStat.total_kyber_sell = total_kyber_sell.intValue
-        etherDeltaDailyStat.avg_price = avg_price.doubleValue
+        etherDeltaDailyStat.avg_buy_price = avg_buy_price.doubleValue
+        etherDeltaDailyStat.avg_sell_price = avg_sell_price.doubleValue
         return etherDeltaDailyStat
     }
     
