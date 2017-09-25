@@ -16,17 +16,18 @@ default_platform :ios
 lane :beta do
   # build your iOS app
   gym(
-    # scheme: "YourScheme",
+    # scheme: “TokenRanks”,
     export_method: "ad-hoc"
   )
 
   # upload to Beta by Crashlytics
   crashlytics(
+    emails: [“grey@aisense.com”,”ruanyubo@gmail.com”],
     api_token: "9cbbab9300390959bd48b87d8497bc194a44486d",
     build_secret: "e65aac01986581f34df9e32439201e2132b16996854f18748bf3b8810506ef98"
   )
   slack(
        slack_url: "https://hooks.slack.com/services/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",
-       message: "#{changelog}- see it at https://fabric.io/_/beta"
+       message: “new TokenAnalytics - see it at https://fabric.io/_/beta"
     )
 end
