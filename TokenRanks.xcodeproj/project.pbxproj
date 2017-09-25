@@ -12,6 +12,11 @@
 		C01E42D51F72FBBD00E1150E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42D41F72FBBD00E1150E /* SettingViewController.swift */; };
 		C01E42D81F72FC8200E1150E /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42D71F72FC8200E1150E /* Drawer.swift */; };
 		C01E42DC1F72FFBE00E1150E /* HolderDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */; };
+		C03FFBF71F7925DE00CAF067 /* TopEtherDeltaTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FFBF61F7925DE00CAF067 /* TopEtherDeltaTransaction.swift */; };
+		C03FFBF91F79287900CAF067 /* EtherDeltaDailyStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FFBF81F79287900CAF067 /* EtherDeltaDailyStat.swift */; };
+		C08F59CC1F78636F006357E5 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F59CB1F78636F006357E5 /* AnalyticsViewController.swift */; };
+		C08F59CE1F7863C2006357E5 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F59CD1F7863C2006357E5 /* Delegate.swift */; };
+		C08F59D01F78641B006357E5 /* AnalyticsDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F59CF1F78641B006357E5 /* AnalyticsDrawer.swift */; };
 		C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B21F6B592D008D5D35 /* AppDelegate.swift */; };
 		C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */; };
 		C098D6B81F6B592D008D5D35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098D6B61F6B592D008D5D35 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 		C01E42D41F72FBBD00E1150E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C01E42D71F72FC8200E1150E /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		C01E42DB1F72FFBE00E1150E /* HolderDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderDrawer.swift; sourceTree = "<group>"; };
+		C03FFBF61F7925DE00CAF067 /* TopEtherDeltaTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEtherDeltaTransaction.swift; sourceTree = "<group>"; };
+		C03FFBF81F79287900CAF067 /* EtherDeltaDailyStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherDeltaDailyStat.swift; sourceTree = "<group>"; };
+		C08F59CB1F78636F006357E5 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		C08F59CD1F7863C2006357E5 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		C08F59CF1F78641B006357E5 /* AnalyticsDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDrawer.swift; sourceTree = "<group>"; };
 		C098D6AF1F6B592D008D5D35 /* Analytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098D6B21F6B592D008D5D35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C098D6B41F6B592D008D5D35 /* TokenHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHolderViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,16 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		C08F59CA1F78635F006357E5 /* TokenAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				C08F59CB1F78636F006357E5 /* AnalyticsViewController.swift */,
+				C08F59CD1F7863C2006357E5 /* Delegate.swift */,
+				C08F59CF1F78641B006357E5 /* AnalyticsDrawer.swift */,
+			);
+			path = TokenAnalytics;
+			sourceTree = "<group>";
+		};
 		C098D6A61F6B592D008D5D35 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +155,8 @@
 				C0FB8DAC1F6C7D9000B6CA2F /* Token.swift */,
 				C0FB8DAE1F6C7DAC00B6CA2F /* Transaction.swift */,
 				C0FB8DB01F6C7DC100B6CA2F /* Account.swift */,
+				C03FFBF61F7925DE00CAF067 /* TopEtherDeltaTransaction.swift */,
+				C03FFBF81F79287900CAF067 /* EtherDeltaDailyStat.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -156,6 +178,7 @@
 		C0FB8DB31F6C89DE00B6CA2F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C08F59CA1F78635F006357E5 /* TokenAnalytics */,
 				C0FB8DC11F6C925D00B6CA2F /* TokenTransaction */,
 				C0FB8DC01F6C925500B6CA2F /* TokenHolder */,
 				C01E42D61F72FBC800E1150E /* Setting */,
@@ -341,12 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03FFBF71F7925DE00CAF067 /* TopEtherDeltaTransaction.swift in Sources */,
 				C0FB8DAB1F6C7D7100B6CA2F /* TopTokenTransaction.swift in Sources */,
 				C0FB8DB51F6C8A9800B6CA2F /* TopAccountTableViewCell.swift in Sources */,
+				C03FFBF91F79287900CAF067 /* EtherDeltaDailyStat.swift in Sources */,
 				C0FB8DAD1F6C7D9000B6CA2F /* Token.swift in Sources */,
 				C01E42D51F72FBBD00E1150E /* SettingViewController.swift in Sources */,
 				C0FB8DAF1F6C7DAC00B6CA2F /* Transaction.swift in Sources */,
+				C08F59D01F78641B006357E5 /* AnalyticsDrawer.swift in Sources */,
 				C0FB8DB91F6C8B3D00B6CA2F /* TopTransactionTableViewCell.swift in Sources */,
+				C08F59CC1F78636F006357E5 /* AnalyticsViewController.swift in Sources */,
 				C0FB8DC31F6C927B00B6CA2F /* Transction+TableViewDelegate.swift in Sources */,
 				C098D6B51F6B592D008D5D35 /* TokenHolderViewController.swift in Sources */,
 				C0FB8DA81F6C7D6300B6CA2F /* TopTokenHolder.swift in Sources */,
@@ -356,6 +383,7 @@
 				C01E42D31F72F59D00E1150E /* Tool.swift in Sources */,
 				C0FB8DA51F6C7B3900B6CA2F /* APIFactory.swift in Sources */,
 				C098D6C51F6B5D28008D5D35 /* Holder+TableViewDelegate.swift in Sources */,
+				C08F59CE1F7863C2006357E5 /* Delegate.swift in Sources */,
 				C098D6B31F6B592D008D5D35 /* AppDelegate.swift in Sources */,
 				C0FB8DBB1F6C8FD000B6CA2F /* Constant.swift in Sources */,
 				C01E42D81F72FC8200E1150E /* Drawer.swift in Sources */,

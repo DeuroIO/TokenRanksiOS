@@ -1,29 +1,32 @@
 //
-//  ViewController.swift
+//  AnalyticsViewController.swift
 //  TokenRanks
 //
-//  Created by Gelei Chen on 14/9/2017.
+//  Created by Gelei Chen on 24/9/2017.
 //  Copyright © 2017 Gelei. All rights reserved.
 //
 
 import UIKit
-import MMDrawerController
 import MBProgressHUD
+import MMDrawerController
 
-class TokenHolderViewController: UIViewController {
+class AnalyticsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var holders : [TopTokenHolder] = [] {
+    var transactions : [TopTokenTransaction] = [] {
         didSet{
             self.tableView.reloadData()
         }
     }
+    @IBOutlet weak var totalSellEthLabel: UILabel!
+    @IBOutlet weak var AVGPriceLabel: UILabel!
+    @IBOutlet weak var totalBuyEthLabel: UILabel!
     
     var isLoadingData = false
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
-            #selector(TokenHolderViewController.loadData),
+            #selector(AnalyticsViewController.loadData),
                                  for: UIControlEvents.valueChanged)
         refreshControl.tintColor = UIColor.red
         
@@ -45,12 +48,12 @@ class TokenHolderViewController: UIViewController {
         self.navigationItem.title = "\(Constant.currentTokenString) \(Constant.getDateInString(date: Constant.currentDate))"
         refreshControl.beginRefreshing()
         loadingHud = Tool.showMiddleHint("Loading Holder", shouldHide: false)
-        APIFactory.sharedInstance.requestTopTokenHolder(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (holders) in
-            self.refreshControl.endRefreshing()
-            self.loadingHud.hide(animated: true)
+        APIFactory.sharedInstance.requestTopTokenTransactions(timestamp: Constant.getDateInString(date: Constant.currentDate), coin_address: Constant.currentToken!.contract_address) { (transactions) in
             self.isLoadingData = false
-            if let m_holders = holders {
-                self.holders = m_holders
+            self.loadingHud.hide(animated: true)
+            self.refreshControl.endRefreshing()
+            if let m_transactions = transactions {
+                self.transactions = m_transactions
             }
         }
     }
@@ -65,13 +68,13 @@ class TokenHolderViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.tabBarController?.tabBar.barTintColor = UIColor.black
         self.tabBarController?.tabBar.tintColor = UIColor.white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.nextdateSelected))
-        self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(TokenHolderViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TokenHolderViewController.prevDateSelected))], animated: true)
-        NotificationCenter.default.addObserver(self, selector: #selector(TokenHolderViewController.loadData), name: NSNotification.Name(rawValue: Constant.didGetAllTheTokens), object: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AnalyticsViewController.nextdateSelected))
+        self.navigationItem.setLeftBarButtonItems([MMDrawerBarButtonItem(target: self, action: #selector(AnalyticsViewController.leftBarClicked)),UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AnalyticsViewController.prevDateSelected))], animated: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(AnalyticsViewController.loadData), name: NSNotification.Name(rawValue: Constant.didGetAllTheTokens), object: nil)
         loadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,5 +102,14 @@ class TokenHolderViewController: UIViewController {
         }
         
     }
-}
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

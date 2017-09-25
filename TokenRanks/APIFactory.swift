@@ -88,4 +88,30 @@ extension APIFactory {
             }
         }
     }
+    
+    func requestTopEtherDeltaTransactions(timestamp:String,coin_address:String,completion: @escaping(_ results:[TopEtherDeltaTransaction]?)->Void){
+        Alamofire.request("\(serverEndPoint)/topEtherDeltaTransactions/\(timestamp)/\(coin_address)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result {
+            case .success (let value):
+                let transactions = TopEtherDeltaTransaction.fromJSONArray(value: value)
+                completion(transactions)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil)
+            }
+        }
+    }
+    
+    func requestEtherDeltaDailyStat(timestamp:String,coin_address:String,completion: @escaping(_ results:[EtherDeltaDailyStat]?)->Void){
+        Alamofire.request("\(serverEndPoint)/retrive_etherDelta_daily_stat/\(timestamp)/\(coin_address)/?format=json", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result {
+            case .success (let value):
+                let transactions = EtherDeltaDailyStat.fromJSONArray(value: value)
+                completion(transactions)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil)
+            }
+        }
+    }
 }

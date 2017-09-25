@@ -72,11 +72,6 @@ class TopTransactionViewController: UIViewController {
         loadData()
         // Do any additional setup after loading the view.
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadData()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
