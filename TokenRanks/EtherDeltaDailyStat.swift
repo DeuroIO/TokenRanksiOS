@@ -11,10 +11,10 @@ import SwiftyJSON
 struct EtherDeltaDailyStat {
     var token_name : Token!
     var timestamp = ""
-    var total_eth_buy = 0.0
-    var total_eth_sell = 0.0
-    var total_kyber_buy = 0.0
-    var total_kyber_sell = 0.0
+    var total_eth_buy = 0
+    var total_eth_sell = 0
+    var total_kyber_buy = 0
+    var total_kyber_sell = 0
     var avg_price = 0.0
     
     static func fromJSON(json:JSON)->EtherDeltaDailyStat{
@@ -30,10 +30,10 @@ struct EtherDeltaDailyStat {
         var etherDeltaDailyStat = EtherDeltaDailyStat()
         etherDeltaDailyStat.token_name = token
         etherDeltaDailyStat.timestamp = timestamp
-        etherDeltaDailyStat.total_eth_buy = total_eth_buy.doubleValue
-        etherDeltaDailyStat.total_eth_sell = total_eth_sell.doubleValue
-        etherDeltaDailyStat.total_kyber_buy = total_kyber_buy.doubleValue
-        etherDeltaDailyStat.total_kyber_sell = total_kyber_sell.doubleValue
+        etherDeltaDailyStat.total_eth_buy = total_eth_buy.intValue
+        etherDeltaDailyStat.total_eth_sell = total_eth_sell.intValue
+        etherDeltaDailyStat.total_kyber_buy = total_kyber_buy.intValue
+        etherDeltaDailyStat.total_kyber_sell = total_kyber_sell.intValue
         etherDeltaDailyStat.avg_price = avg_price.doubleValue
         return etherDeltaDailyStat
     }

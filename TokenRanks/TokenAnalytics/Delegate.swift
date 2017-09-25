@@ -22,7 +22,7 @@ extension AnalyticsViewController: UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TopTransactionTableViewCell
         cell.addressLabel.text = transaction.tx_hash
-        cell.quantityLabel.text = transaction.eth_quantity.description + " ETH"
+        cell.quantityLabel.text = transaction.eth_quantity.formattedWithSeparator + " ETH"
         cell.memoTextView.text = transaction.from_account.gussed_name
         cell.rankLabel.text = transaction.rank.description
         cell.percantageLabel.text = (Double(transaction.token_quantity) / Constant.kyberTotalAmountOfTokenDenominator).rounded(toPlaces: 3).description + "%"
