@@ -59,10 +59,10 @@ class AnalyticsViewController: UIViewController {
                 let dailyStat = m_stats[0]
                 self.totalBuyEthLabel.text = dailyStat.total_eth_buy.formattedWithSeparator  + " ETH / " + dailyStat.total_kyber_buy.formattedWithSeparator + " KNC"
                 self.totalSellEthLabel.text = dailyStat.total_eth_sell.formattedWithSeparator + " ETH / " + dailyStat.total_kyber_sell.formattedWithSeparator + " KNC"
-                let priceAttributedText = NSMutableAttributedString(string:"\(dailyStat.avg_buy_price.rounded(toPlaces: 3).description) VS \(dailyStat.avg_sell_price.rounded(toPlaces: 3).description) KNC/ETH")
-                let buyRange = NSRange(location: 0, length: 5)
+                let priceAttributedText = NSMutableAttributedString(string:"\(dailyStat.avg_buy_price.rounded(toPlaces: 4).description) VS \(dailyStat.avg_sell_price.rounded(toPlaces: 4).description) KNC/ETH")
+                let buyRange = NSRange(location: 0, length: 6)
                 priceAttributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 139/255, green: 195/255, blue: 74/255, alpha: 1), range: buyRange)
-                let sellRange = NSRange(location:9,length:5)
+                let sellRange = NSRange(location:10,length:6)
                 priceAttributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: sellRange)
                 self.AVGPriceLabel.attributedText = priceAttributedText
             }
