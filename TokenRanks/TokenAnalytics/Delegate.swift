@@ -32,7 +32,7 @@ extension AnalyticsViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let address = self.transactions[indexPath.row].tx_hash
-        //        _ = UIApplication.shared.open(URL(string: "https://etherscan.io/tx/\(address)")!, options: [:], completionHandler: nil)
+        _ = UIApplication.shared.open(URL(string: "https://etherscan.io/tx/\(address)")!, options: [:], completionHandler: nil)
         UIPasteboard.general.string = "https://etherscan.io/tx/\(address)"
         tableView.deselectRow(at: indexPath, animated: true)
     }

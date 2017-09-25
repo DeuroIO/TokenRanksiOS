@@ -418,7 +418,7 @@
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="usP-4I-NIj" id="Cfj-44-r5R"/>
-                                            <outlet property="delegate" destination="usP-4I-NIj" id="Aj6-sy-gv8"/>
+                                            <outlet property="delegate" destination="usP-4I-NIj" id="6Jx-EL-uDW"/>
                                         </connections>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rOz-Pd-EGO">
